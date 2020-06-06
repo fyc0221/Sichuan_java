@@ -29,7 +29,7 @@ public class UserMapperTest {
 	public void addUserByPar() {
 		SqlSession session = factory.openSession();
 		UserMapper mapper = session.getMapper(UserMapper.class);
-		User user = new User(35, "ÀèÃ÷", "liming111", "6666666", "Ì¨ÍåĞÂÖñ", "723872387@qq.com", 1);
+		User user = new User(35, "æ¦›åº¢æ§‘", "liming111", "6666666", "é™ç‰ˆå’•é‚æ‰®î¶", "723872387@qq.com", 1);
 		mapper.addUserByPar(user);
 		session.commit();
 		session.close();
@@ -39,10 +39,10 @@ public class UserMapperTest {
 	public void selectOneByPar() {
 		SqlSession session = factory.openSession();
 		UserMapper mapper = session.getMapper(UserMapper.class);
-		User user = mapper.selectOneByPar(5);//µÚÒ»´ÎÖ´ĞĞsqlÓï¾ä
+		User user = mapper.selectOneByPar(5);//ç»—îƒ¿ç«´å¨†â„ƒå¢½ç›å®»qlç’‡î…å½
 		System.out.println(user);
-		session.clearCache();//Çå³ıÒ»¼¶»º´æ
-		User user1 = mapper.selectOneByPar(5);//µÚ¶ş´ÎÖ´ĞĞsqlÓï¾ä
+		session.clearCache();//å¨“å‘´æ«æ¶“ï¿½ç»¾Ñ…ç´¦ç€›ï¿½
+		User user1 = mapper.selectOneByPar(5);//ç»—îƒ¿ç°©å¨†â„ƒå¢½ç›å®»qlç’‡î…å½
 		System.out.println(user);
 		session.close();
 		System.out.println(user == user1);
@@ -53,13 +53,13 @@ public class UserMapperTest {
 
 	  SqlSession session = factory.openSession();
 	  UserMapper mapper = session.getMapper(UserMapper.class);
-	  User user = mapper.selectOneByPar(5);// µÚÒ»´ÎÖ´ĞĞsqlÓï¾ä System.out.println(user);
+	  User user = mapper.selectOneByPar(5);// ç»—îƒ¿ç«´å¨†â„ƒå¢½ç›å®»qlç’‡î…å½ System.out.println(user);
 	  System.out.println(user);
 	  session.close();
 
 	  SqlSession session1 = factory.openSession();
 	  UserMapper mapper1 = session1.getMapper(UserMapper.class);
-	  User user1 = mapper1.selectOneByPar(5);// µÚÒ»´ÎÖ´ĞĞsqlÓï¾ä
+	  User user1 = mapper1.selectOneByPar(5);// ç»—îƒ¿ç«´å¨†â„ƒå¢½ç›å®»qlç’‡î…å½
 	  System.out.println(user1);
 	  session1.close();
 
@@ -111,7 +111,7 @@ public class UserMapperTest {
 		session.close();
 	}
 	
-	//²âÊÔ¶¯Ì¬dql_foreach
+	//å¨´å¬­ç˜¯é”ã„¦ï¿½ä¹¨ql_foreach
 	@Test
 	public void findUsersWithList() {
 		SqlSession session = factory.openSession();
@@ -144,7 +144,7 @@ public class UserMapperTest {
 		UserMapper mapper = session.getMapper(UserMapper.class);
 		User user = new User();
 		user.setPhone("110");
-		user.setUsername("»ÆÃ÷ê»");
+		user.setUsername("æ¦›å‹¬æ§‘é„ï¿½");
 		user.setPassword("20020219");
 		System.out.println(user);
 		mapper.addUserSelective(user);
@@ -159,7 +159,8 @@ public class UserMapperTest {
 		// new UserMapperTest().selectOneByPar();
 		new UserMapperTest().selectAll();
 		
-		System.out.println(123456);
+		System.out.println("æˆ‘ä»¬å·²ç»åˆå¹¶äº†");
+
 	}
 
 	
