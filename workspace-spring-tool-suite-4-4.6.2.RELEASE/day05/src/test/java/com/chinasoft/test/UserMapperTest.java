@@ -29,7 +29,7 @@ public class UserMapperTest {
 	public void addUserByPar() {
 		SqlSession session = factory.openSession();
 		UserMapper mapper = session.getMapper(UserMapper.class);
-		User user = new User(35, "ÀèÃ÷", "liming111", "6666666", "Ì¨ÍåĞÂÖñ", "723872387@qq.com", 1);
+		User user = new User(35, "é»æ˜", "liming111", "6666666", "å°æ¹¾æ–°ç«¹", "723872387@qq.com", 1);
 		mapper.addUserByPar(user);
 		session.commit();
 		session.close();
@@ -39,10 +39,10 @@ public class UserMapperTest {
 	public void selectOneByPar() {
 		SqlSession session = factory.openSession();
 		UserMapper mapper = session.getMapper(UserMapper.class);
-		User user = mapper.selectOneByPar(5);//µÚÒ»´ÎÖ´ĞĞsqlÓï¾ä
+		User user = mapper.selectOneByPar(5);//ç¬¬ä¸€æ¬¡æ‰§è¡Œsqlè¯­å¥
 		System.out.println(user);
-		session.clearCache();//Çå³ıÒ»¼¶»º´æ
-		User user1 = mapper.selectOneByPar(5);//µÚ¶ş´ÎÖ´ĞĞsqlÓï¾ä
+		session.clearCache();//æ¸…é™¤ä¸€çº§ç¼“å­˜
+		User user1 = mapper.selectOneByPar(5);//ç¬¬äºŒæ¬¡æ‰§è¡Œsqlè¯­å¥
 		System.out.println(user);
 		session.close();
 		System.out.println(user == user1);
@@ -53,13 +53,13 @@ public class UserMapperTest {
 
 	  SqlSession session = factory.openSession();
 	  UserMapper mapper = session.getMapper(UserMapper.class);
-	  User user = mapper.selectOneByPar(5);// µÚÒ»´ÎÖ´ĞĞsqlÓï¾ä System.out.println(user);
+	  User user = mapper.selectOneByPar(5);// ç¬¬ä¸€æ¬¡æ‰§è¡Œsqlè¯­å¥ System.out.println(user);
 	  System.out.println(user);
 	  session.close();
 
 	  SqlSession session1 = factory.openSession();
 	  UserMapper mapper1 = session1.getMapper(UserMapper.class);
-	  User user1 = mapper1.selectOneByPar(5);// µÚÒ»´ÎÖ´ĞĞsqlÓï¾ä
+	  User user1 = mapper1.selectOneByPar(5);// ç¬¬ä¸€æ¬¡æ‰§è¡Œsqlè¯­å¥
 	  System.out.println(user1);
 	  session1.close();
 
@@ -111,7 +111,7 @@ public class UserMapperTest {
 		session.close();
 	}
 	
-	//²âÊÔ¶¯Ì¬dql_foreach
+	//æµ‹è¯•åŠ¨æ€dql_foreach
 	@Test
 	public void findUsersWithList() {
 		SqlSession session = factory.openSession();
@@ -144,7 +144,7 @@ public class UserMapperTest {
 		UserMapper mapper = session.getMapper(UserMapper.class);
 		User user = new User();
 		user.setPhone("110");
-		user.setUsername("»ÆÃ÷ê»");
+		user.setUsername("é»„æ˜æ˜Š");
 		user.setPassword("20020219");
 		System.out.println(user);
 		mapper.addUserSelective(user);
@@ -158,6 +158,7 @@ public class UserMapperTest {
 		// new UserMapperTest().selectOneByPar();
 		// new UserMapperTest().selectOneByPar();
 		new UserMapperTest().selectAll();
+		System.out.println(8888888);
 	}
 
 	
